@@ -6,6 +6,6 @@ package broke_ioc.entity
  */
 data class Musician(private val name: String, private val instrument: String) {
     fun soundCheck(): String {
-        return "musician $name make noice on $instrument instrument\r\n"
+        return "musician $name make noice on $instrument instrument"
     }
 }
