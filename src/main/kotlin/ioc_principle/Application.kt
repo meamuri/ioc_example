@@ -5,26 +5,19 @@ import ioc_principle.entity.Director
 import ioc_principle.entity.Musician
 import ioc_principle.entity.Orchestra
 
-val perfectMusicians: List<Musician> = listOf(
-        Musician("Ringo", "Drums"),
-        Musician("Paul", "Bass"),
-        Musician("George", "Guitar"),
-        Musician("John", "Guitar")
-)
-
-val kodein = Kodein {
-    bind<Orchestra>() with singleton { Orchestra(perfectMusicians) }
-    bind<Director>() with provider {Director(Orchestra(listOf(
+val container = Kodein {
+    constant("theBeatles") with listOf(
             Musician("Ringo", "Drums"),
             Musician("Paul", "Bass"),
             Musician("George", "Guitar"),
             Musician("John", "Guitar")
-    ))) }
+    )
+    bind<Orchestra>() with singleton { Orchestra( instance("theBeatles") ) }
+    bind<Director>() with provider { Director(instance()) }
 }
 
 fun main(args: Array<String>) {
-//    val orchestra: Orchestra = kodein.instance()
-    val director: Director = kodein.instance()
+    val director: Director = container.instance()
     val noise: String = director.makePerfectNoise()
     println(noise)
 }
