@@ -1,13 +1,13 @@
 package springContainer.entity
 
-import principleIoC.entity.Musician
-import principleIoC.entity.Orchestra
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Service
 
-class Director (private val orchestra: Orchestra) {
-
+@Service
+class Director {
+    lateinit var orchestra: Orchestra
     fun makePerfectNoise(): String {
-        val musicians: Array<Musician> = orchestra.musicians.toTypedArray()
-        val sounds: List<String> = musicians.map { m -> m.soundCheck() }
+        val sounds: List<String> = orchestra.musicians.map { m -> m.soundCheck() }
         return sounds.joinToString(",\n")
     }
 
