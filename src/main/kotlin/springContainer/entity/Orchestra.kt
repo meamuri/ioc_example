@@ -1,3 +1,8 @@
 package springContainer.entity
 
-class Orchestra(val musicians: List<Musician>)
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Component
+
+
+@Component
+class Orchestra @Autowired constructor(val musicians: List<Musician>)
