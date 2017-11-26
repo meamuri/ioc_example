@@ -4,6 +4,6 @@ import broke_ioc.entity.Director
 
 fun main(args: Array<String>) {
     val director: Director = Director()
-    val noice: String = director.makePerfectNoise()
-    println(noice)
+    val noise: String = director.makePerfectNoise()
+    println(noise)
 }
