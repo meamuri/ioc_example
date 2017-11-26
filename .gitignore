@@ -17,7 +17,3 @@ gradle-app.setting
 # IntelliJ project files (use `./gradlew idea` to regenerate them)
 *.ipr
 *.iws
-Будет удалено gradle/
-Будет удалено gradlew
-Будет удалено gradlew.bat
-Будет удалено src/
