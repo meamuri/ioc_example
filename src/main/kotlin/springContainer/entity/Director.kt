@@ -1,7 +1,7 @@
 package springContainer.entity
 
-import PrincipleIoC.entity.Musician
-import PrincipleIoC.entity.Orchestra
+import principleIoC.entity.Musician
+import principleIoC.entity.Orchestra
 
 class Director (private val orchestra: Orchestra) {
 

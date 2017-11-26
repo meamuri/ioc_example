@@ -1,4 +1,4 @@
-package PrincipleIoC.entity
+package principleIoC.entity
 
 class Director (private val orchestra: Orchestra) {
 

@@ -1,5 +1,5 @@
 package springContainer.entity
 
-import PrincipleIoC.entity.Musician
+import principleIoC.entity.Musician
 
-class Orchestra(val musicians: List<Musician>) 
+class Orchestra(val musicians: List<Musician>)
