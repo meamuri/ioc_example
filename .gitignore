@@ -1,0 +1,23 @@
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!/gradle/wrapper/gradle-wrapper.jar
+
+# Cache of project
+.gradletasknamecache
+
+# IntelliJ project files (use `./gradlew idea` to regenerate them)
+*.ipr
+*.iws
+Будет удалено gradle/
+Будет удалено gradlew
+Будет удалено gradlew.bat
+Будет удалено src/
