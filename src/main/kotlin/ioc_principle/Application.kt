@@ -14,12 +14,17 @@ val perfectMusicians: List<Musician> = listOf(
 
 val kodein = Kodein {
     bind<Orchestra>() with singleton { Orchestra(perfectMusicians) }
-    bind<Director>() with factory {o: Orchestra -> Director(o) }
+    bind<Director>() with provider {Director(Orchestra(listOf(
+            Musician("Ringo", "Drums"),
+            Musician("Paul", "Bass"),
+            Musician("George", "Guitar"),
+            Musician("John", "Guitar")
+    ))) }
 }
 
 fun main(args: Array<String>) {
-    val orchestra: Orchestra = kodein.instance()
-    val director: Director = kodein.instance(orchestra)
+//    val orchestra: Orchestra = kodein.instance()
+    val director: Director = kodein.instance()
     val noise: String = director.makePerfectNoise()
     println(noise)
 }
