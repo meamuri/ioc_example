@@ -1,15 +1,11 @@
 package broke_ioc.entity
 
 class Director () {
-    private val musicians: ArrayList<Musician> = ArrayList()
-    init {
-        musicians.addAll(
-                listOf(
-                    Musician("Ringo", "Drums"),
-                    Musician("Paul", "Bass"),
-                    Musician("George", "Guitar"),
-                    Musician("John", "Guitar")
-                )
-        ) // .. addAll
-    } // .. init
+    private val orchestra: Orchestra = Orchestra()
+
+    fun makePerfectNoise(): String {
+        val musicians: Array<Musician> = orchestra.musicians.toTypedArray()
+        val sounds: List<String> = musicians.map { m -> m.soundCheck() }
+        return sounds.joinToString(",\n")
+    }
 } // .. class Director
