@@ -1,9 +1,9 @@
-package ioc_principle
+package PrincipleIoC
 
 import com.github.salomonbrys.kodein.*
-import ioc_principle.entity.Director
-import ioc_principle.entity.Musician
-import ioc_principle.entity.Orchestra
+import PrincipleIoC.entity.Director
+import PrincipleIoC.entity.Musician
+import PrincipleIoC.entity.Orchestra
 
 val container = Kodein {
     constant("theBeatles") with listOf(

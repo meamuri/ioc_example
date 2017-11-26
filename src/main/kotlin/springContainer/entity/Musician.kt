@@ -1,4 +1,4 @@
-package broke_ioc.entity
+package springContainer.entity
 
 /**
  * https://kotlinlang.org/docs/reference/data-classes.html

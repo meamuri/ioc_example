@@ -1,6 +1,6 @@
-package broke_ioc
+package brokeIoC
 
-import broke_ioc.entity.Director
+import brokeIoC.entity.Director
 
 fun main(args: Array<String>) {
     val director = Director()

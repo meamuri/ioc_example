@@ -1,4 +1,4 @@
-package ioc_principle.entity
+package PrincipleIoC.entity
 
 /**
  * https://kotlinlang.org/docs/reference/data-classes.html

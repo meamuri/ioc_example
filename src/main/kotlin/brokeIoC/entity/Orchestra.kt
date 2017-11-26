@@ -1,4 +1,4 @@
-package broke_ioc.entity
+package brokeIoC.entity
 
 class Orchestra {
     val musicians: ArrayList<Musician> = ArrayList()
