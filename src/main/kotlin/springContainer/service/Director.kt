@@ -1,16 +1,20 @@
 package springContainer.service
 
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import springContainer.entity.Orchestra
 
 interface IDirector {
-    fun makePerfectNoise(orchestra: Orchestra): String
+    fun makePerfectNoise(): String
 }
 
 @Service
 class Director: IDirector {
-    override fun makePerfectNoise(orchestra: Orchestra): String {
-        val sounds: List<String> = orchestra.musicians.map { m -> m.soundCheck() }
+    @Autowired
+    lateinit var orchestra: Orchestra
+
+    override fun makePerfectNoise(): String {
+        val sounds: List<String> = orchestra.findAll().map { m -> m.soundCheck() }
         return sounds.joinToString(",\n")
     }
 } // .. class Director
