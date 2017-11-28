@@ -6,6 +6,6 @@ package principleIoC.entity
  */
 data class Musician(private val name: String, private val instrument: String) {
     fun soundCheck(): String {
-        return "musician $name make noice on $instrument instrument"
+        return "musician $name make noise on $instrument instrument"
     }
 }
