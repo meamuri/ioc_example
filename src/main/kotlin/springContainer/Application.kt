@@ -4,23 +4,27 @@ import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.context.annotation.Bean
-import springContainer.entity.Musician
+import springContainer.entity.Director
 import springContainer.entity.Orchestra
-import springContainer.service.Director
+import springContainer.entity.Musician
 
 @SpringBootApplication
 class Application {
     @Bean
-    fun init(repository: Orchestra) = CommandLineRunner {
-        repository.save(Musician("Ringo", "Drums"))
-        repository.save(Musician("Paul", "Bass"))
-        repository.save(Musician("George", "Guitar"))
-        repository.save(Musician("John", "Guitar"))
-        println(repository.count())
+    fun init(orchestra: Orchestra, d: Director): CommandLineRunner = CommandLineRunner {
+        orchestra.save(Musician("John", "Guitar"))
+        orchestra.save(Musician("Paul", "Bass"))
+        orchestra.save(Musician("Ringo", "Drums"))
+        orchestra.save(Musician("George", "Guitar"))
+        d.orchestra = orchestra
+    }
 
-        val director = Director()
-        val noise: String = director.makePerfectNoise()
+    @Bean
+    fun run(d: Director): CommandLineRunner = CommandLineRunner {
+        val noise: String = d.makePerfectNoise()
+        println("**\n\n\n")
         println(noise)
+        println("\n\n\n**")
     }
 
 }
