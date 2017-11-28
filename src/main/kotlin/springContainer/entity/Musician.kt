@@ -8,6 +8,9 @@ import javax.persistence.Id
 /**
  * https://kotlinlang.org/docs/reference/data-classes.html
  * data classes documentation
+ *
+ * https://blog.codecentric.de/en/2017/06/kotlin-spring-working-jpa-data-classes/
+ * jpa data tutorial
  */
 @Entity
 data class Musician(private val name: String, private val instrument: String) {
